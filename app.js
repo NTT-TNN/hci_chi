@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var port= process.env.port | 8000;
 
 var app = express();
 
@@ -43,7 +44,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(8000,function(){
-  console.log("App running at port",8000);
+app.listen(port,function(){
+  console.log("App running at port",port);
 });
 module.exports = app;
