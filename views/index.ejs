@@ -1,23 +1,45 @@
- <% for(var i=0; i<obj.features.length; i++) {%>
-   <% if (obj.features[i].properties.Field18){%>
-     <div><%= i+1 %>.<%= obj.features[i].properties.Field18 %></div>
-     <div style="padding-left:40px">
 
-       <div>A. <%= obj.features[i].properties.Field19 %></div>
-       <div>B.<%= obj.features[i].properties.Field20 %></div>
-       <div>C. <%= obj.features[i].properties.Field21 %></div>
-       <div>D. <%= obj.features[i].properties.Field22 %></div>
-       <div>E. <%= obj.features[i].properties.Field23 %></div>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>HCI</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+  <h1 style="text-align:center">Đề Cương HCI</h1>
+   <% for(var i=0; i<obj.features.length&&i<2232; i++) {%>
+     <% if (obj.features[i].properties.Field18){%>
+       <div><%= i+1 %>.<%= obj.features[i].properties.Field18 %></div>
+       <div style="padding-left:40px">
+         <div class="row">
+           <div class="col-md-6">A. <%= obj.features[i].properties.Field19 %> </div>
+           <div class="col-md-6" >B.<%= obj.features[i].properties.Field20 %></div>
+        </div>
+        <div class="row">
+         <div class="col-md-6">C. <%= obj.features[i].properties.Field21 %></div>
+         <div class="col-md-6"> D. <%= obj.features[i].properties.Field22 %></div>
+       </div>
+         <div>E. <%= obj.features[i].properties.Field23 %></div>
+       </div>
+     <div style="padding-left:20px">
+         <div>=> Đáp án: <%= obj.features[i].properties.Field24 %></div>
+         <div>Giải thích: <%= obj.features[i].properties.Field25 %></div>
      </div>
-   <div style="padding-left:20px">
-       <div>=> Đáp án: <%= obj.features[i].properties.Field24 %></div>
-       <div>Giải thích: <%= obj.features[i].properties.Field25 %></div>
-   </div>
-   <%}else{%>
-     <div><%= i+1 %>.<%= obj.features[i].properties.Field18 %> Không có câu hỏi</div>
+     <%}else{%>
+       <div><%= i+1 %>.<%= obj.features[i].properties.Field18 %> Không có câu hỏi</div>
+     <%}%>
+
    <%}%>
 
- <%}%>
-<script>
-
-</script>
+</body>
+</html>
