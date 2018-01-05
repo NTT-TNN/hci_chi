@@ -45,6 +45,6 @@ app.use(function(err, req, res, next) {
 });
 
 app.listen(port,function(){
-  console.log("App running at port",port);
+  console.log("App HCI running at port",port);
 });
 module.exports = app;
