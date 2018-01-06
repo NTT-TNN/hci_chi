@@ -19,33 +19,32 @@
     </a>
 
   </div>
+  <h1>Danh sách các câu đúng:</h1>
   <h1><%= answer_arr %></h1>
   <h1 style="text-align:center">Quiz HCI</h1>
   <form action="/quiz" method="post">
    <% for(var i=0; i<obj.length; i++) {%>
-     <% if (obj[i].properties.Field18 && obj[i].properties.Field19!=" " && obj[i].properties.Field20
+     <% if (obj[i]!=null && obj[i].properties.Field18 && obj[i].properties.Field19!=" " && obj[i].properties.Field20
      && obj[i].properties.Field21 && obj[i].properties.Field22){%>
-
          <div><%= i+1 %>.<%= obj[i].properties.Field18 %></div>
          <div style="padding-left:40px">
            <div class="row">
              <div class="checkbox">
                <div class="">
-                 <label><input type="checkbox"value="A" name="<%- i %>" disable/>A. <%= obj[i].properties.Field19 %></label>
+                 <label><input type="checkbox" value="A" name="<%- i %>" disabled/>A. <%= obj[i].properties.Field19 %></label>
                </div>
                <div>
-                 <label><input type="checkbox" value="B" name="<%- i %>" disable/>B.<%= obj[i].properties.Field20 %></label>
+                 <label><input type="checkbox" value="B" name="<%- i %>"disabled/>B.<%= obj[i].properties.Field20 %></label>
                </div>
                <div>
-                 <label><input type="checkbox" value="C" name="<%- i %>" disable/>C. <%= obj[i].properties.Field21 %></label>
+                 <label><input type="checkbox" value="C" name="<%- i %>"/disabled>C. <%= obj[i].properties.Field21 %></label>
                </div>
                <div>
-                 <label><input type="checkbox" value="D" name="<%- i %>" disable/>D. <%= obj[i].properties.Field22 %></label>
+                 <label><input type="checkbox" value="D" name="<%- i %>"disabled/>D. <%= obj[i].properties.Field22 %></label>
                </div>
                <div class="">
-                 <label><input type="checkbox" value="E" name="<%- i %>" disable/>E. <%= obj[i].properties.Field23 %></label>
+                 <label><input type="checkbox" value="E" name="<%- i %>"disabled/>E. <%= obj[i].properties.Field23 %></label>
                </div>
-               <h4>Đáp án <%= obj[i].properties.Field24 %></h4>
              </div>
          </div>
        </div>

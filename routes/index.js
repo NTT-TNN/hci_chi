@@ -111,7 +111,7 @@ router.post('/quiz', function(req, res, next) {
         // console.log(answer);
     }
     // console.log(mark);
-    res.render('quiz', {
+    res.render('quiz_answer', {
       obj: result,
       answer_arr:answer_arr
     });
@@ -121,6 +121,7 @@ router.post('/quiz', function(req, res, next) {
 
 router.get('/quiz_answer', function(req, res, next) {
 
+  var number_sentences=0;
   var obj;
   fs.readFile('Review.geojson', 'utf8', function (err, data) {
     if (err) throw err;
@@ -128,22 +129,32 @@ router.get('/quiz_answer', function(req, res, next) {
     result=[];
     // console.log(obj);
     for(var i=0;i<obj.features.length  && i<2232;++i){
-
+      // console.log(Math.floor(Math.random() * (10)));
       if(obj.features[i].properties.Field24!="" && obj.features[i].properties.Field24!=null){
+
         var temp=obj.features[i].properties.Field24.replace(/,/g,'');
         temp=temp.replace(/\s/g, '');
         temp=temp.replace(/[0-9]/g, '');
         temp=temp.replace(/\./g, '');
         if(temp.length>0 && temp.length<5 &&  temp!="Đúng" && temp!="AvàB"){
           // console.log(temp);
-          result.push(obj.features[i])
+          if(Math.floor(Math.random() * (10))==0){
+            number_sentences++;
+            result[i]=obj.features[i];
+            console.log(i);
+            if(number_sentences==20){
+              break;
+            }
+          };
+
         }
 
       }
 
     }
     // console.log(result);
-    res.render('quiz_answer', {
+    console.log(result.length);
+    res.render('quiz', {
       obj: result,
       answer_arr:""
     });
