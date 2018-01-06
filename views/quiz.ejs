@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HCI</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div style="text-align:center;">
+    <a href="https://github.com/NTT-TNN"><i style="font-size:48px;color:'red'" class="fa fa-github" ></i>
+    </a>
+
+  </div>
+
+  <h1 style="text-align:center">Quiz HCI</h1>
+  <form action="/quiz" method="post">
+   <% for(var i=0; i<obj.features.length&&i<3; i++) {%>
+     <% if (obj.features[i].properties.Field18 && obj.features[i].properties.Field19!=" " && obj.features[i].properties.Field20
+     && obj.features[i].properties.Field21 && obj.features[i].properties.Field22){%>
+       <div><%= i+1 %>.<%= obj.features[i].properties.Field18 %></div>
+       <div style="padding-left:40px">
+         <div class="row">
+           <div class="checkbox">
+             <div class="">
+               <label><input type="checkbox"value="A" name="<%- i %>"/>A. <%= obj.features[i].properties.Field19 %></label>
+             </div>
+             <div>
+               <label><input type="checkbox" value="B" name="<%- i %>"/>B.<%= obj.features[i].properties.Field20 %></label>
+             </div>
+             <div>
+               <label><input type="checkbox" value="C" name="<%- i %>"/>C. <%= obj.features[i].properties.Field21 %></label>
+             </div>
+             <div>
+               <label><input type="checkbox" value="D" name="<%- i %>"/>D. <%= obj.features[i].properties.Field22 %></label>
+             </div>
+             <div class="">
+               <label><input type="checkbox" value="E" name="<%- i %>"/>E. <%= obj.features[i].properties.Field23 %></label>
+             </div>
+           </div>
+       </div>
+     </div>
+     <%}%>
+
+   <%}%>
+   <div class="row" style="text-align:center">
+     <button type="submit" class="btn btn-primary">Nộp bài</button>
+   </div>
+ </form>
+   <div style="text-align:center" class="row">
+     <a href="https://github.com/NTT-TNN"><i style="font-size:48px;color:'red'" class="fa fa-github" ></i>
+     </a>
+     <div class="col-xs-12 col-md-12 col-sm-12">
+       <!-- <img src="/images/IMG_4778.JPG" style="height:768px;width:1366px"alt=""> -->
+
+     </div>
+   </div>
+
+
+</body>
+</html>
