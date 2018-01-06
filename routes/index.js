@@ -153,8 +153,8 @@ router.get('/quiz_answer', function(req, res, next) {
 
     }
     // console.log(result);
-    console.log(result.length);
-    res.render('quiz', {
+    console.log(results);
+    res.render('quiz_answer', {
       obj: results,
       answer_arr:""
     });
