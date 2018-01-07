@@ -59,11 +59,11 @@
 <script>
 var result = JSON.parse('<%-JSON.stringify(results)%>');
 var columns=[];
+console.log(result);
 for(var i=0;i<result.length;i++){
   var temp=[i,result[i]];
   columns.push(temp);
 }
-console.log(columns);
 var chart = c3.generate({
   bindto: '#chart',
   data: {

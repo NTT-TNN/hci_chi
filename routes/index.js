@@ -35,6 +35,7 @@ router.get('/quiz', function(req, res, next) {
         if(temp.length>0 && temp.length<5 &&  temp!="Đúng" && temp!="AvàB"){
           // console.log(temp);
           if(Math.floor(Math.random() * (20))==0){
+
             number_sentences++;
             result[i]=obj.features[i];
             // console.log(i);
@@ -92,12 +93,12 @@ router.post('/quiz', function(req, res, next) {
         // console.log(answer);
     }
     // console.log(mark);
-    fs.readFile('results.json', function (err, data) {
+    fs.readFile('./public/results.json', function (err, data) {
       console.log("write");
         var json = JSON.parse(data)
         json.push(mark);
 
-        fs.writeFile("results.json", JSON.stringify(json))
+        fs.writeFile("./public/results.json", JSON.stringify(json))
     })
     res.render('quiz_answer', {
       obj: result,
@@ -154,7 +155,7 @@ router.get('/quiz_answer', function(req, res, next) {
 router.get('/thongke', function(req, res, next) {
   var number_sentences=0;
   var obj;
-  fs.readFile('results.json', 'utf8', function (err, data) {
+  fs.readFile('./public/results.json', 'utf8', function (err, data) {
     if (err) throw err;
     results = JSON.parse(data);
     mark_results=[];
