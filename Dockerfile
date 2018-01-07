@@ -41,6 +41,7 @@ LABEL description="Rhiot docker image"
 RUN apt-get update && \
     apt-get install -y apt-utils unzip ethtool dos2unix telnet bind9 hostapd isc-dhcp-server iw monit wget openjdk-${JAVA_VERSION}-jdk --no-install-recommends  && \
     rm -rf /var/lib/apt/lists/*
+RUN apt-get upadate
 RUN sudo apt-get purge dhcpcd5
 RUN sudo apt-get remove network-manager
 RUN sudo apt-get update
