@@ -34,11 +34,12 @@ router.get('/quiz', function(req, res, next) {
         temp=temp.replace(/\./g, '');
         if(temp.length>0 && temp.length<5 &&  temp!="Đúng" && temp!="AvàB"){
           // console.log(temp);
-          if(Math.floor(Math.random() * (10))==0){
+          if(Math.floor(Math.random() * (20))==0){
             number_sentences++;
             result[i]=obj.features[i];
-            console.log(i);
+            // console.log(i);
             if(number_sentences==20){
+              // console.log("20 cau");
               break;
             }
           };
@@ -48,8 +49,9 @@ router.get('/quiz', function(req, res, next) {
       }
 
     }
+    console.log(number_sentences);
     // console.log(result);
-    console.log(result.length);
+    // console.log(result.length);
     res.render('quiz', {
       obj: result,
       answer_arr:""
@@ -157,7 +159,8 @@ router.get('/quiz_answer', function(req, res, next) {
     console.log(results);
     res.render('quiz_answer', {
       obj: results,
-      answer_arr:""
+      answer_arr:"",
+      mark:0
     });
   });
 
