@@ -111,9 +111,10 @@ router.post('/quiz', function(req, res, next) {
         // console.log(answer);
     }
     // console.log(mark);
-    res.render('quiz_answer', { 
+    res.render('quiz_answer', {
       obj: result,
-      answer_arr:answer_arr
+      answer_arr:answer_arr,
+      mark:mark
     });
   });
 
