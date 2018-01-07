@@ -1,0 +1,29 @@
+.field{
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+}
+.line{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 45px;
+}
+.value{
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+}
+#btn-edit {
+  padding-left: 40px;
+    padding-top: 50px;
+    height: 100px
+}
+#btn-edit #edit{
+      width: 100px;
+}
+#cancel{
+  width: 100px;
+  margin-left: 296px
+}
+#ok{
+  width: 100px;
+  margin-left: 180px;
+}

@@ -1,0 +1,18 @@
+<%- include head.ejs %>
+<div id="chart" ></div>
+<script>
+var result = JSON.parse('<%-JSON.stringify(results)%>');
+var columns=[];
+for(var i=0;i<result.length;i++){
+  var temp=[i,result[i]];
+  columns.push(temp);
+}
+console.log(columns);
+var chart = c3.generate({
+  bindto: '#chart',
+  data: {
+    columns:columns,
+    type: 'pie'
+  }
+});
+</script>
