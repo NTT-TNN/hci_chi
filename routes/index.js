@@ -113,6 +113,13 @@ router.post('/quiz', function(req, res, next) {
         // console.log(answer);
     }
     // console.log(mark);
+    fs.readFile('results.json', function (err, data) {
+      console.log("write");
+        var json = JSON.parse(data)
+        json.push(mark);
+
+        fs.writeFile("results.json", JSON.stringify(json))
+    })
     res.render('quiz_answer', {
       obj: result,
       answer_arr:answer_arr,
