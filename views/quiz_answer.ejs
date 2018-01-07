@@ -1,4 +1,60 @@
-<%- include head.ejs %>
+<!DOCTYPE html>
+<html>
+<head>
+<title>HCI</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+<link href='http://fonts.which is googleapis.com/css?family=Roboto:400,300,300italic,500,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="//storage.googleapis.com/code.getmdl.io/1.0.1/material.teal-red.min.css" />
+<script src="//storage.googleapis.com/code.getmdl.io/1.0.1/material.min.js"></script>
+<!-- Load c3.css -->
+<link rel="stylesheet" href="css/c3.css">
+<link rel="stylesheet" href="css/c3.min.css">
+<link rel="stylesheet" href="stylesheets/style.css">
+
+
+<!-- Load d3.js and c3.js -->
+<script src="js/d3.js" charset="utf-8"></script>
+<script src="js/d3.min.js" charset="utf-8"></script>
+<script src="js/c3.js" ></script>
+<script src="js/c3.min.js" ></script>
+</head>
+<body>
+  <div class="mdl-layout mdl-js-layout">
+    <header class="mdl-layout__header">
+      <div class="mdl-layout__header-row">
+        <span class="mdl-layout-title">HCI-CHI</span>
+        <div class="mdl-layout-spacer"></div>
+        <nav class="mdl-navigation">
+  				<a class="mdl-navigation__link" href="#">Home</a>
+  				<a class="mdl-navigation__link" href="/quiz">Quiz</a>
+  				<a class="mdl-navigation__link" href="/quiz_answer">Quiz answer</a>
+          <a class="mdl-navigation__link" href="/thongke">Thống kê</a>
+          <a class="mdl-navigation__link" href="https://github.com/NTT-TNN">Author</a>
+        </nav>
+      </div>
+    </header>
+  	<div class="mdl-layout__drawer">
+      <span class="mdl-layout-title">Acme</span>
+      <nav class="mdl-navigation">
+        <a class="mdl-navigation__link" href="#">Home</a>
+        <a class="mdl-navigation__link" href="/quiz">Quiz</a>
+        <a class="mdl-navigation__link" href="/quiz_answer">Quiz answer</a>
+        <a class="mdl-navigation__link" href="/thongke">Thống kê</a>
+          <a class="mdl-navigation__link" href="https://github.com/NTT-TNN">Author</a>
+      </nav>
+    </div>
+    </div>
+    <h1 style="text-align:center">Quiz HCI</h1>
 
   <h3>Bạn trả lới đùng</h3>
   <h3><%= mark %>/20 Câu</h3>
