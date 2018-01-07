@@ -58,8 +58,6 @@
 
   <h3>Bạn trả lới đùng</h3>
   <h3><%= mark %>/20 Câu</h3>
-
-  <h1 style="text-align:center">Quiz HCI</h1>
   <form action="/quiz" method="post">
    <% for(var i=0; i<obj.length; i++) {%>
      <% if (obj[i]!=null && obj[i].properties.Field18 && obj[i].properties.Field19!=" " && obj[i].properties.Field20
