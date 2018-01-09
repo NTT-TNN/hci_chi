@@ -33,10 +33,10 @@ router.get('/quiz', function(req, res, next) {
         temp=temp.replace(/[0-9]/g, '');
         temp=temp.replace(/\./g, '');
         temp = temp.toUpperCase();
+        // console.log(temp);
         if(temp.length>0 && temp.length<5 &&  temp!="Đúng" && temp!="AvàB"){
           // console.log(temp);
-          // if(Math.floor(Math.random() * (20))==0){
-          if(i==1077){
+          if(Math.floor(Math.random() * (20))==0){
             number_sentences++;
             result[i]=obj.features[i];
             // console.log(i);
@@ -84,6 +84,7 @@ router.post('/quiz', function(req, res, next) {
           temp=temp.replace(/\s/g, '');
           temp=temp.replace(/[0-9]/g, '');
           temp=temp.replace(/\./g, '');
+          temp = temp.toUpperCase();
           if(answer==temp){
             mark++;
             key=Number(key)+1;
