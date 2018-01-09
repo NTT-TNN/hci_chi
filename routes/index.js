@@ -74,7 +74,7 @@ router.post('/quiz', function(req, res, next) {
       for(var key in req.body){
         // console.log(key);
         answer="";
-        console.log(key);
+        // console.log(key);
         for(var j=0;j<req.body[key].length;++j){// nhieu phuong an dung
           // console.log(key);
           answer+=req.body[key][j];
@@ -89,14 +89,14 @@ router.post('/quiz', function(req, res, next) {
             mark++;
             key=Number(key)+1;
             answer_arr.push(key);
-            console.log(answer_arr);
+            // console.log(answer_arr);
           }
         // }
         // console.log(answer);
     }
     // console.log(mark);
     fs.readFile('./public/results.json', function (err, data) {
-      console.log("write");
+      // console.log("write");
         var json = JSON.parse(data)
         json.push(mark);
 
@@ -145,7 +145,7 @@ router.get('/quiz_answer', function(req, res, next) {
 
     }
     // console.log(result);
-    console.log(results);
+    // console.log(results);
     res.render('quiz_answer', {
       obj: results,
       answer_arr:"",
