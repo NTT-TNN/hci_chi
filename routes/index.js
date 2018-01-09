@@ -32,10 +32,11 @@ router.get('/quiz', function(req, res, next) {
         temp=temp.replace(/\s/g, '');
         temp=temp.replace(/[0-9]/g, '');
         temp=temp.replace(/\./g, '');
+        temp = temp.toUpperCase();
         if(temp.length>0 && temp.length<5 &&  temp!="Đúng" && temp!="AvàB"){
           // console.log(temp);
-          if(Math.floor(Math.random() * (20))==0){
-
+          // if(Math.floor(Math.random() * (20))==0){
+          if(i==1077){
             number_sentences++;
             result[i]=obj.features[i];
             // console.log(i);
